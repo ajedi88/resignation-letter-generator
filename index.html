@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resignation Letter Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            font-size: 14px;
+            outline: none;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .output {
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            white-space: pre-wrap; /* Preserves line breaks */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resignation Letter Generator</h1>
+        <form id="resignation-form">
+            <div class="question">
+                <label for="tone">Choose the tone of your letter:</label>
+                <select id="tone">
+                    <option value="professional">Professional</option>
+                    <option value="sincere">Sincere</option>
+                    <option value="humorous">Humorous</option>
+                    <option value="passive-aggressive">Passive-Aggressive</option>
+                    <option value="snarky">Snarky</option>
+                    <option value="sarcastic">Sarcastic</option>
+                    <option value="motivational">Motivational</option>
+                    <option value="brutally_honest">Brutally Honest</option>
+                    <option value="heartfelt">Heartfelt</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label for="reason">Reason for leaving:</label>
+                <select id="reason">
+                    <option value="better_opportunity">Better opportunity elsewhere</option>
+                    <option value="toxic_environment">Toxic work environment</option>
+                    <option value="overwork">Overwork and burnout</option>
+                    <option value="personal_reasons">Personal reasons</option>
+                    <option value="managerial_issues">Managerial issues</option>
+                    <option value="no_growth">No growth or development</option>
+                    <option value="unfulfilled_promises">Unfulfilled Promises</option>
+                    <option value="office_drama">Office Drama</option>
+                    <option value="better_management">Seeking Better Management</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label for="manager">Describe your relationship with your manager:</label>
+                <select id="manager">
+                    <option value="supportive">Supportive and understanding</option>
+                    <option value="neutral">Neutral</option>
+                    <option value="micromanager">Micromanaging nightmare</option>
+                    <option value="dismissive">Dismissive or unhelpful</option>
+                    <option value="ghosting_boss">Ghosting Boss</option>
+                    <option value="clueless_leader">Clueless Leader</option>
+                    <option value="passive_aggressive_manager">Passive-Aggressive Manager</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label for="gratitude">How much gratitude would you like to express?</label>
+                <select id="gratitude">
+                    <option value="a_lot">A lot</option>
+                    <option value="some">Some</option>
+                    <option value="minimal">Minimal</option>
+                    <option value="none">None</option>
+                    <option value="ironic_gratitude">Ironic Gratitude</option>
+                    <option value="over_the_top_gratitude">Over-the-Top Gratitude</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label for="jab">Include a closing remark?</label>
+                <select id="jab">
+                    <option value="professional">Keep it professional</option>
+                    <option value="light_jab">Light jab</option>
+                    <option value="moderate_jab">Moderate jab</option>
+                    <option value="full_burn">Full burn</option>
+                    <option value="full_roast">Full roast</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="generateLetter()">Generate Letter</button>
+        </form>
+
+        <div class="output" id="output"></div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
